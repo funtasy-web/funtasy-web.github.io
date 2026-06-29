@@ -6,3 +6,14 @@ Thumbs.db
 # Brand source assets — kept local, not published with the site.
 # Delete this line (and the one below) if you'd like the logos hosted at funtasymedia.com/brand/
 brand/
+
+# Local-only design variants/previews (index_cool.html, index_alternate.html, …) — not part of the live site.
+index_*.html
+
+# Documents / non-site files kept in this folder — never publish these to the live site.
+*.pdf
+*.doc
+*.docx
+*.key
+*.numbers
+*.pages
