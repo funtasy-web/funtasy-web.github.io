@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en" class="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funtasy Media — Social Media Representation</title>
+<meta name="description" content="Funtasy Media is a boutique representation studio for digital-first talent — handling brand partnerships, content strategy, and day-to-day management for a small roster of models and creators.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Funtasy Media — Social Media Representation">
+<meta property="og:description" content="A boutique representation studio for digital-first talent.">
+<meta property="og:url" content="https://funtasymedia.com/">
+<meta name="twitter:card" content="summary">
+<script>document.documentElement.className = 'js';</script>
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-soft:#F5F6F8;
+    --ink:#16181D;
+    --body:#424955;
+    --muted:#8A909C;
+    --line:#E5E7EC;
+    --accent:#3A5A7C;
+    --accent-light:#7E9BB5;
+    --font-display:"Futura","Futura PT","Century Gothic","Avenir Next",sans-serif;
+    --font-body:"Avenir Next","Avenir",-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);
+    color:var(--body);
+    font-family:var(--font-body);
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+
+  .container{
+    width:100%;
+    max-width:1180px;
+    margin-inline:auto;
+    padding-inline:clamp(1.5rem,5vw,4rem);
+  }
+
+  /* ---- Monogram ---- */
+  .mono{flex:none}
+  .mono .accent{fill:var(--accent)}
+
+  /* ---- Eyebrow / labels ---- */
+  .eyebrow{
+    font-family:var(--font-body);
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+
+  /* ---- Header ---- */
+  .site-header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.82);
+    -webkit-backdrop-filter:saturate(140%) blur(10px);
+    backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid transparent;
+    transition:border-color .35s ease,background .35s ease;
+  }
+  .site-header.is-stuck{border-bottom-color:var(--line);background:rgba(255,255,255,.9)}
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:1.5rem;
+    padding-block:1.15rem;
+  }
+  .brand{display:inline-flex;align-items:center;gap:.65rem;color:var(--ink);text-decoration:none}
+  .wordmark{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:.82rem;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--ink);
+    line-height:1;
+  }
+  .nav{display:flex;align-items:center;gap:clamp(1.1rem,2.6vw,2.3rem)}
+  .nav a{
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--body);
+    text-decoration:none;
+    transition:color .25s ease;
+  }
+  .nav a:hover{color:var(--accent)}
+  .nav .nav-cta{color:var(--ink)}
+  .nav .nav-cta:hover{color:var(--accent)}
+  @media (max-width:640px){
+    .nav a:not(.nav-cta){display:none}
+  }
+  @media (max-width:380px){
+    .wordmark{font-size:.74rem;letter-spacing:.16em}
+  }
+
+  /* ---- Buttons ---- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.55em;
+    font-family:var(--font-body);
+    font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    text-decoration:none;
+    padding:.95em 1.55em;
+    border-radius:2px;
+    transition:background .28s ease,color .28s ease,border-color .28s ease,transform .28s ease;
+  }
+  .btn-primary{background:var(--ink);color:#fff}
+  .btn-primary:hover{background:var(--accent)}
+  .btn-ghost{color:var(--ink);padding-inline:.4em}
+  .btn-ghost:hover{color:var(--accent)}
+  .btn-ghost .arrow{transition:transform .28s ease}
+  .btn-ghost:hover .arrow{transform:translateY(3px)}
+
+  /* ---- Hero ---- */
+  .hero{position:relative;padding-block:clamp(5rem,12vw,9rem) clamp(4rem,9vw,7rem);scroll-margin-top:72px}
+  .hero-inner{position:relative}
+  .hero-frame{position:absolute;width:32px;height:32px;border:1.5px solid var(--accent);pointer-events:none}
+  .hero-frame.tl{top:-16px;left:-16px;border-right:0;border-bottom:0}
+  .hero-frame.br{bottom:-16px;right:-16px;border-left:0;border-top:0}
+  .hero-title{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(2.6rem,6vw,5rem);
+    line-height:1.04;
+    letter-spacing:-.015em;
+    color:var(--ink);
+    max-width:16ch;
+    margin-top:1.4rem;
+    text-wrap:balance;
+  }
+  .lead{
+    font-size:clamp(1.05rem,1.7vw,1.3rem);
+    line-height:1.5;
+    color:var(--body);
+    max-width:48ch;
+    margin-top:1.6rem;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.4rem;margin-top:2.5rem}
+
+  /* ---- Sections ---- */
+  .section{padding-block:clamp(4.5rem,9vw,8rem);scroll-margin-top:64px}
+  .section--soft{background:var(--bg-soft)}
+  .section-grid{display:grid;gap:2.25rem}
+  @media (min-width:900px){
+    .section-grid{grid-template-columns:200px minmax(0,1fr);gap:clamp(2.5rem,5vw,5rem)}
+    .section-grid .eyebrow{position:sticky;top:6rem;padding-top:.5rem}
+  }
+  .section-body > * + *{margin-top:1.25rem}
+  h2{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(1.6rem,2.9vw,2.4rem);
+    line-height:1.12;
+    letter-spacing:-.01em;
+    color:var(--ink);
+    max-width:20ch;
+    text-wrap:balance;
+  }
+  .body{max-width:60ch;color:var(--body)}
+  .body + .body{margin-top:1rem}
+
+  /* ---- Hairline grid list (services + principles) ---- */
+  .grid-list{
+    display:grid;grid-template-columns:1fr;
+    column-gap:clamp(2rem,4vw,3.5rem);
+    margin-top:2.5rem;
+    border-top:1px solid var(--line);
+  }
+  @media (min-width:620px){.grid-list{grid-template-columns:1fr 1fr}}
+  .grid-item{padding-block:1.55rem;border-bottom:1px solid var(--line)}
+  .grid-item h3{
+    font-family:var(--font-body);
+    font-size:1.0625rem;font-weight:600;color:var(--ink);
+    letter-spacing:.005em;margin-bottom:.45rem;
+  }
+  .grid-item p{font-size:.95rem;line-height:1.55;color:var(--body);max-width:42ch}
+
+  /* ---- Contact ---- */
+  .email{
+    display:inline-block;
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(1.35rem,5vw,2.7rem);
+    letter-spacing:-.01em;
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:2px solid var(--accent);
+    overflow-wrap:anywhere;
+    padding-bottom:.06em;
+    transition:color .25s ease,border-color .25s ease;
+  }
+  .email:hover{color:var(--accent)}
+  .contact-note{max-width:52ch;color:var(--body);margin-top:1.6rem}
+
+  /* ---- Footer ---- */
+  .site-footer{background:var(--ink);color:#AEB4BE;padding-block:clamp(3rem,6vw,4.5rem) 1.75rem}
+  .footer-inner{
+    display:flex;flex-wrap:wrap;gap:2.5rem;
+    justify-content:space-between;align-items:flex-start;
+    padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  .footer-brand{display:flex;flex-direction:column;gap:.9rem;max-width:30ch}
+  .footer-brand .brand .wordmark{color:#F3F5F8}
+  .footer-brand .brand{color:#F3F5F8}
+  .footer-tag{font-size:.82rem;color:#8B919C;letter-spacing:.02em}
+  .footer-nav{display:flex;flex-wrap:wrap;gap:.7rem 2rem}
+  .footer-nav a{
+    font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    color:#AEB4BE;text-decoration:none;transition:color .25s ease;
+  }
+  .footer-nav a:hover{color:#fff}
+  .footer-base{
+    display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between;
+    margin-top:1.75rem;font-size:.76rem;color:#71767F;letter-spacing:.04em;
+  }
+  .footer-base a{color:#71767F;text-decoration:none;transition:color .25s ease}
+  .footer-base a:hover{color:#fff}
+
+  /* ---- Reveal motion ---- */
+  .js .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.is-visible{opacity:1;transform:none}
+
+  :where(a,button):focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .js .reveal{opacity:1;transform:none;transition:none}
+    *{transition:none!important;animation:none!important}
+  }
+</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="Funtasy Media — home">
+      <svg class="mono" viewBox="0 0 48 48" width="30" height="30" role="img" aria-hidden="true" focusable="false">
+        <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
+          <path d="M4 14V4h10"/><path d="M34 4h10v10"/><path d="M44 34v10H34"/><path d="M14 44H4v-10"/>
+        </g>
+        <rect x="17" y="15" width="14" height="2.8" fill="currentColor"/>
+        <rect x="17" y="15" width="2.8" height="18" fill="currentColor"/>
+        <rect class="accent" x="17" y="22" width="9.5" height="2.8"/>
+      </svg>
+      <span class="wordmark">Funtasy Media</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero-inner">
+        <span class="hero-frame tl" aria-hidden="true"></span>
+        <span class="hero-frame br" aria-hidden="true"></span>
+        <p class="eyebrow reveal">Social media representation</p>
+        <h1 class="hero-title reveal" id="hero-title">We look after the people behind the feed.</h1>
+        <p class="lead reveal">Funtasy Media is a boutique representation studio for digital-first talent. We handle the partnerships, the planning and the day-to-day — so our roster can focus on the work.</p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="mailto:funtasy@funtasymedia.com">Work with us</a>
+          <a class="btn btn-ghost" href="#services">What we do <span class="arrow" aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="container section-grid">
+      <p class="eyebrow reveal">About</p>
+      <div class="section-body">
+        <h2 class="reveal" id="about-title">A small studio for a small roster.</h2>
+        <p class="body reveal">We're a representation studio built around social. We partner with a deliberately short list of models and creators — taking on the brand deals, the inbound, the content cadence and the negotiations, and giving each person the attention a long roster never could.</p>
+        <p class="body reveal">No churn. No spray-and-pray. Just steady, considered growth, and a team that actually picks up the phone.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft" id="services" aria-labelledby="services-title">
+    <div class="container section-grid">
+      <p class="eyebrow reveal">What we do</p>
+      <div class="section-body">
+        <h2 class="reveal" id="services-title">Representation, end to end.</h2>
+        <div class="grid-list reveal">
+          <article class="grid-item">
+            <h3>Brand partnerships</h3>
+            <p>Sourcing, vetting and negotiating the deals worth doing — and politely declining the ones that aren't.</p>
+          </article>
+          <article class="grid-item">
+            <h3>Content strategy</h3>
+            <p>A clear, sustainable posting rhythm and creative direction that sounds like you, not a template.</p>
+          </article>
+          <article class="grid-item">
+            <h3>Platform growth</h3>
+            <p>Audience development across Instagram, TikTok and beyond — informed by the numbers, never dictated by them.</p>
+          </article>
+          <article class="grid-item">
+            <h3>Day-to-day management</h3>
+            <p>Inbound, scheduling, briefs and the admin that quietly eats your week. We handle it.</p>
+          </article>
+          <article class="grid-item">
+            <h3>Deals &amp; negotiation</h3>
+            <p>Rates, contracts and usage terms, handled by people who do this every day.</p>
+          </article>
+          <article class="grid-item">
+            <h3>Discretion</h3>
+            <p>Your business stays your business. Always.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="approach" aria-labelledby="approach-title">
+    <div class="container section-grid">
+      <p class="eyebrow reveal">How we work</p>
+      <div class="section-body">
+        <h2 class="reveal" id="approach-title">A few things we believe.</h2>
+        <div class="grid-list reveal">
+          <article class="grid-item">
+            <h3>Selective by design</h3>
+            <p>We only take on talent we can genuinely move the needle for.</p>
+          </article>
+          <article class="grid-item">
+            <h3>Long-term over loud</h3>
+            <p>We build careers that outlast a single viral week.</p>
+          </article>
+          <article class="grid-item">
+            <h3>Numbers inform, taste decides</h3>
+            <p>We read the analytics, then trust the eye.</p>
+          </article>
+          <article class="grid-item">
+            <h3>Calm is a feature</h3>
+            <p>Fewer fires and fewer surprises mean more room to create.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft" id="contact" aria-labelledby="contact-title">
+    <div class="container section-grid">
+      <p class="eyebrow reveal">Get in touch</p>
+      <div class="section-body">
+        <h2 class="reveal" id="contact-title">For representation &amp; partnerships.</h2>
+        <p class="reveal"><a class="email" href="mailto:funtasy@funtasymedia.com">funtasy@funtasymedia.com</a></p>
+        <p class="contact-note body reveal">Models &amp; creators — tell us a little about yourself and where to find you. Brands — tell us who you'd like to work with.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="Funtasy Media — home">
+          <svg class="mono" viewBox="0 0 48 48" width="28" height="28" role="img" aria-hidden="true" focusable="false">
+            <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
+              <path d="M4 14V4h10"/><path d="M34 4h10v10"/><path d="M44 34v10H34"/><path d="M14 44H4v-10"/>
+            </g>
+            <rect x="17" y="15" width="14" height="2.8" fill="currentColor"/>
+            <rect x="17" y="15" width="2.8" height="18" fill="currentColor"/>
+            <rect x="17" y="22" width="9.5" height="2.8" fill="currentColor"/>
+          </svg>
+          <span class="wordmark">Funtasy Media</span>
+        </a>
+        <p class="footer-tag">Social media representation for digital-first talent.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-base">
+      <p>© 2026 Funtasy Media. All rights reserved.</p>
+      <p><a href="mailto:funtasy@funtasymedia.com">funtasy@funtasymedia.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  var header = document.querySelector('.site-header');
+  function onScroll(){ if(header){ header.classList.toggle('is-stuck', window.scrollY > 8); } }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce || !('IntersectionObserver' in window)){
+    els.forEach(function(el){ el.classList.add('is-visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:0.05});
+  els.forEach(function(el){ io.observe(el); });
+
+  window.addEventListener('load', function(){
+    setTimeout(function(){ els.forEach(function(el){ el.classList.add('is-visible'); }); }, 700);
+  });
+})();
+</script>
+</body>
+</html>

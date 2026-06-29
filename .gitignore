@@ -1,0 +1,8 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# Brand source assets — kept local, not published with the site.
+# Delete this line (and the one below) if you'd like the logos hosted at funtasymedia.com/brand/
+brand/
